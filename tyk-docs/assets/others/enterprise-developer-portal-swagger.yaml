@@ -1940,7 +1940,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product-Tag-index'
-          description: OK
+          description: Product tags retrieved successfully
       security:
         - AdminAPIToken: []
       summary: List all tags for this API Product
@@ -1968,7 +1968,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product-Tag'
-          description: OK
+          description: Product tag created successfully
         "422":
           content:
             application/json:
@@ -1982,7 +1982,7 @@ paths:
         - Tags for API Products
   /products/{product_id}/tags/{tag_name}:
     delete:
-      description: Detach a tag from this API Product
+      description: Delete a tag from this API Product
       operationId: /products/:product_id/tags/:tag_id-DELETE
       parameters:
         - description: UID of an API Product
@@ -1992,7 +1992,7 @@ paths:
           schema:
             type: integer
             example: 1
-        - description: Name of a the tag
+        - description: Name of the tag to delete
           in: path
           name: tag_name
           required: true
@@ -2005,16 +2005,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Status'
-          description: OK
+          description: Tag successfully deleted from product
         "404":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Status'
-          description: Not found
+The tag requested for deletion was not found
       security:
         - AdminAPIToken: []
-      summary: Detach a tag from this API Product
+      summary: Delete a tag from this API Product
       tags:
         - Tags for API Products
     get:
@@ -2028,7 +2028,7 @@ paths:
           schema:
             type: integer
             example: 1
-        - description: Name of a the tag
+        - description: Name of the tag
           in: path
           name: tag_name
           required: true
@@ -2065,7 +2065,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product-ClientType-index'
-          description: OK
+          description: List of client types successfully retrieved
       security:
         - AdminAPIToken: []
       summary: List all client types for this API Product
@@ -2089,16 +2089,16 @@ paths:
       responses:
         "201":
           content:
-            applicatison/json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/Product-ClientType-show'
-          description: OK
+          description: Client type successfully created for product
         "422":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/OnlyErrors'
-          description: OK
+          description: Invalid payload encountered when creating client type. Request could not be processed
       security:
         - AdminAPIToken: []
       summary: Attach a client type to this API Product
@@ -2106,7 +2106,7 @@ paths:
         - Client types for API Products
   /products/{product_id}/client_types/{client_type_id}:
     delete:
-      description: Detach a client type from this API Product
+      description: Delete a client type from this API Product
       operationId: /products/:product_id/client_types/:client_type_id-DELETE
       parameters:
         - description: UID of an API Product
@@ -2129,7 +2129,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Status'
-          description: OK
+          description: Client type deleted successfully
         "404":
           content:
             application/json:
