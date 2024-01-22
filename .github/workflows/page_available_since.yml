@@ -12,8 +12,6 @@ jobs:
       # Checkout your code
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: generate-url-availability-file
       - name: "Generate page availability and versions"
         run: |
           cd scripts
@@ -24,5 +22,6 @@ jobs:
           commit-message: Generate and update file to show when a url was added to docs
           title: Update page availability in each docs version
           branch: page-available-since
+          base: master
 
 
