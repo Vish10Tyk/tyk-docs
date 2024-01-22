@@ -1,0 +1,15 @@
+name: Check in which version a page is available
+on: [pull_request]
+jobs:
+  check-page-availability:
+    runs-on: ubuntu-20.04
+    name: Check version a page is available
+    steps:
+
+      # Checkout your code
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Generate page availability and versions"
+        run: |
+          cd scripts
+          python3 page_available_since.py
