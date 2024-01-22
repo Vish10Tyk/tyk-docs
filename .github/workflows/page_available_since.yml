@@ -19,6 +19,7 @@ jobs:
       - name: Raise a pull request Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.ORG_GH_TOKEN }}
           commit-message: Generate and update file to show when a url was added to docs
           title: Update page availability in each docs version
           branch: page-available-since
