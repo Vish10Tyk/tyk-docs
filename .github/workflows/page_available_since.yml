@@ -12,6 +12,8 @@ jobs:
       # Checkout your code
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: generate-url-availability-file
       - name: "Generate page availability and versions"
         run: |
           cd scripts
