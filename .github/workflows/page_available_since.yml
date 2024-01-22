@@ -3,7 +3,6 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch:
 jobs:
   check-page-availability:
     runs-on: ubuntu-20.04
@@ -22,7 +21,6 @@ jobs:
         with:
           commit-message: Generate and update file to show when a url was added to docs
           title: Update page availability in each docs version
-          delete-branch: true
           branch: page-available-since
 
 
