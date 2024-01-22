@@ -9,7 +9,7 @@ jobs:
     name: Check version a page is available
     steps:
 
-      # Checkout your code
+      # Checkout your cod
       - name: Checkout
         uses: actions/checkout@v2
       - name: "Generate page availability and versions"
