@@ -2,7 +2,7 @@ name: Check in which version a page is available
 on:
   pull_request:
     branches:
-      - master
+      - '**'
 jobs:
   check-page-availability:
     runs-on: ubuntu-20.04
