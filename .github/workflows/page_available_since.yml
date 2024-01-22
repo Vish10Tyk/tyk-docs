@@ -17,3 +17,12 @@ jobs:
         run: |
           cd scripts
           python3 page_available_since.py
+      - name: Raise a pull request Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: Generate and update file to show when a url was added to docs
+          title: Update page availability in each docs version
+          delete-branch: true
+          branch: page-available-since
+
+
