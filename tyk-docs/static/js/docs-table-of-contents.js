@@ -7,11 +7,7 @@ var buildTableOfContents = function () {
         ToC = $(".documentation-table-of-contents"),
         ToContent = $(".toc__content"),
         ToClbl = $('<span class="toc__label">On this page</span>'),
-<<<<<<< Updated upstream
-        contentTitles = $("h2, h3", "#main-content");
-=======
         contentTitles = $("h2, h3, h4, h5", "#main-content");
->>>>>>> Stashed changes
 
     if (!ToC[0]) {
         return;
@@ -45,20 +41,14 @@ var buildTableOfContents = function () {
         }
 
         if ($(this).is('h3')) {
-<<<<<<< Updated upstream
-            var link = $(`<a href="#${$(this).attr("id")}" class="sub_toc__item ${h2}">${title}</a>`);
-=======
             var h3 = $(this).text().replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
             var link = $(`<a href="#${$(this).attr("id")}" class="sub_toc__item sub-accordion-title ${h3}">${title}</a>`);
->>>>>>> Stashed changes
             var accordionContent = $('<div class="accordion-content"></div>').append(link);
             if (accordionGroup.find('.accordion-item:last').length) {
                 accordionGroup.find('.accordion-item:last').append(accordionContent);
             } else {
                 ToContent.append(accordionContent);
             }
-<<<<<<< Updated upstream
-=======
 
             accordionContent.click(function () {
                 $(this).toggleClass('accordion-up');
@@ -97,7 +87,6 @@ var buildTableOfContents = function () {
                 subSubAccordionContent.find('.sub-sub-accordion-content').toggleClass('accordion-up');
                 // You can add further logic if needed for H5 content
             });
->>>>>>> Stashed changes
         }
     });
 
@@ -114,10 +103,6 @@ var buildTableOfContents = function () {
             // Do something if there is accordion content
         } else {
             $(this).find('a.toc__item').addClass('accordionHolder');
-<<<<<<< Updated upstream
-        }
-    });
-=======
         }        
     });
 
@@ -141,44 +126,19 @@ var buildTableOfContents = function () {
         }
     });   
     
->>>>>>> Stashed changes
 };
 
 // Call the function to build the table of contents with accordion functionality
 $(document).ready(buildTableOfContents);
 $(document).on("turbolinks:load", buildTableOfContents);
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 /**
  * Toggle TOC for small devices
  */
 
 function activeTocToggle() {
-<<<<<<< Updated upstream
-	var tocLabel = $('.toc__label');
-	var tocItems = $('.toc__item');
-	var pageContent = $('.page-content__container, .header');
-	
-	tocLabel.on('click', function(e) {
-		if (window.innerWidth < 1024) {
-			$(e.currentTarget).toggleClass('js-open');
-		} else {
-			$(e.currentTarget).removeClass('js-open');
-		}
-	});
-	
-	/* tocItems.on('click', function(e) {
-		if (window.innerWidth < 1024) {
-			tocLabel.removeClass('js-open');
-		}
-	}); */
-=======
     var tocLabel = $('.toc__label');
     var tocItems = $('.toc__item');
     var pageContent = $('.page-content__container, .header');
->>>>>>> Stashed changes
 
     tocLabel.on('click', function (e) {
         if (window.innerWidth < 1024) {
@@ -214,23 +174,9 @@ function activeTocToggle() {
 
 
 function highlightAnchor() {
-<<<<<<< Updated upstream
-	var contentTitles = $("h2, h3", "#main-content");
-	var currentSectionId;
-	var sectionPosition = 0;
-	
-	contentTitles.each(function () {
-		sectionPosition = $(this).offset().top;
-		currentSectionId = $(this).attr("id");
-		
-		if (sectionPosition > 120  && sectionPosition < (120 + ($(this).outerHeight() * 2) )) {	
-			$('.toc__item,.sub_toc__item').removeClass("js-active");
-			$('.toc__item[href*="#' + currentSectionId + '"],.sub_toc__item[href*="#' + currentSectionId + '"]').addClass("js-active");
-=======
     var contentTitles = $("h2, h3, h4, h5", "#main-content");
     var currentSectionId;
     var sectionPosition = 0;
->>>>>>> Stashed changes
 
     contentTitles.each(function () {
         sectionPosition = $(this).offset().top;

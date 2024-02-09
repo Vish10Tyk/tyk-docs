@@ -75,9 +75,7 @@
 				margin-bottom: 10px;
 				display: block;
 			}
-<<<<<<< Updated upstream
-=======
-			> * {
+			>* {
 				padding-left: 18px;				 
 			}	
 			.sub-accordionHolder {
@@ -122,20 +120,20 @@
 		}
 
 
-.accordion-content.accordion-up {
-	>.sub-accordionHolder {
-		&:after {
-			transform: rotate(180deg);
-		}
-	}
-	>.sub-accordion {
-		>.sub-accordionHolder {
-			&:after {
-				transform: rotate(180deg);
+		.accordion-content.accordion-up {
+			>.sub-accordionHolder {
+				&:after {
+					transform: rotate(180deg);
+				}
+			}
+			>.sub-accordion {
+				>.sub-accordionHolder {
+					&:after {
+						transform: rotate(180deg);
+					}
+				}
 			}
 		}
-	}
-}
 
 		.sub-accordion-content > *{
 			padding-left: 25px;
@@ -188,7 +186,6 @@
 					padding-bottom: 10px !important;					
 				}
 			}
->>>>>>> Stashed changes
 		}
 	}
 	.toc__content {
@@ -196,18 +193,12 @@
 		.accordion-content {
 		
 			a {
-<<<<<<< Updated upstream
-				font-size: 12px;
-				margin-bottom: 10px;
-				display: block;
-=======
 				font-size: 15px !important;
 				color: #03031c;
 				margin: 0 !important;
 				font-weight: 400;
 				padding-bottom: 10px !important;
 				padding-left: 14px;
->>>>>>> Stashed changes
 			}
 		}
 	}
